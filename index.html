@@ -12,12 +12,75 @@
            border:5px solid #ccc;
            border-radius: 50%;
            margin: 100px auto;
+           position: relative;
        }
+       .outer div{
+           position:absolute;
+           left: 0;
+           top: 0;
+           bottom: 0;
+           right: 0;
+           margin: auto;
+       }
+       .hour-wriper{
+           height: 70%;
+           width:70%;
+           animation: run 43200s infinite linear;
+       }
+       .hour-wriper .hour{
+           height: 50%;
+           width: 4px;
+           background-color: #ccc;
+           position: absolute;
+           top: -50%; 
+       }
+       .minute-wriper{
+           height: 80%;
+           width: 80%;
+           animation: run 3600s infinite steps(60);
+       }
+       .minute-wriper .minute{
+           height: 50%;
+           width: 4px;
+           background-color: #ccc;
+           position: absolute;
+           top: -50%; 
+       }
+       .second-wriper{
+           height: 90%;
+           width: 90%;
+           animation: run 60s infinite steps(60);
+       }
+       .second-wriper .second{
+           height: 50%;
+           width: 2px;
+           background-color: red;
+           position: absolute;
+           top: -50%; 
+       }
+
+       @keyframes run{
+           from{
+               transform: rotate(0);
+           }
+           to{
+            transform: rotate(360deg);
+           } 
+       }
+
     </style>
 </head>
 <body>
     <div class="outer">
-
+        <div class="hour-wriper">
+            <div class="hour"></div>
+        </div>
+        <div class="minute-wriper">
+            <div class="minute"></div>
+        </div>
+        <div class="second-wriper">
+            <div class="second"></div>
+        </div>
     </div>
 </body>
 </html>
